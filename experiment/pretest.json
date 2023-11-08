@@ -2,38 +2,63 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is a filter?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": " Frequency selective circuit",
+        "b": "Amplitude selective circuit",
+        "c": "Frequency damping circuit",
+        "d": " Amplitude damping circuit"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "An RC coupling circuit is an example of what type of filter?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "High pass filter",
+        "b": "Low pass filter",
+        "c": "Band pass filter",
+        "d": "All pass filter"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which signal is obtained after integrating the ramp signal (for x>0 in X-Axis)?",
+      "answers": {
+        "a": "Square signal",
+        "b": "Parabolic Signal",
+        "c": "Ramp Signal",
+        "d": "Unit Step Signal"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	
+	
+	{
+      "question": "What is the slew rate of an ideal operational amplifier?",
+      "answers": {
+        "a": "0",
+        "b": "1",
+        "c": "Infinite",
+        "d": "100"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Find the cut off frequency for an RC low pass filter of R=8.2Ω and C=0.0033μF?",
+      "answers": {
+        "a": "7.91KHz",
+        "b": "4.26KHz",
+        "c": "6KHz",
+        "d": "5.88KHz"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
     }
+	
   ]
 }
