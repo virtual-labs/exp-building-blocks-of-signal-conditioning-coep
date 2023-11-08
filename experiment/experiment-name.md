@@ -1,1 +1,1 @@
-## Characterize a density sensor for a particular application
+##  Identifying building blocks of signal conditioning technique of a sensor
