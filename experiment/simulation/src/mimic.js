@@ -137,6 +137,10 @@ function sensor_diag(x,y){
 		  });
 		cirSen = paper.circle((x+410), (y+100), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 //		cirSenGrf =  paper.circle((x+410), (y+300), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
+		var u2txt = paper.text(x + 200, y + 50, "Electrical Analog ").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
 	
 	}
 	function ground_diag(x,y){
@@ -169,9 +173,14 @@ function sensor_diag(x,y){
 		  cirCap = paper.circle((x+340), (y+300), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 		cirCap2 =  paper.circle((x+340), (y+100), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 		cirCap3 =  paper.circle((x+450), (y+100), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
+		
+		var u2txt = paper.text(x + 300, y + 50, "Integrator ").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
 	}
 	
-	
+
 	function ampli_diag(x,y){
 		a = [];
 		 a[0] = paper.path('M' +(x+500)+ ' ' +(y+100)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
@@ -223,6 +232,13 @@ function sensor_diag(x,y){
 		  });
 		  cirAmp =  paper.circle((x+380), (y+100), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 		  cirAmp2 =  paper.circle((x+750), (y+110), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
+		
+		
+		 
+		 var u2txt = paper.text(x + 400, y + 50, "Integrator ").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
 	}
 function openImg() {
 
@@ -252,6 +268,8 @@ function openImg() {
 			  senChk = 2;
 			   })
 			  }
+			  
+			
  		});	
 	
 
@@ -311,12 +329,193 @@ function openImg() {
 	}
 	var cirFilter2;
 	var filChk = 0;
+	function filter(x,y){
+	r = [];
+		  r[0] = paper.path('M' +(x+150)+ ' ' +(y+100)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		  r[0].animate({path : 'M' +(x+150)+ ' ' +(y+100)+ 'l 50 0 l 10 -20 l 10 30 l 10 -30 l 10 30 l 10 -20 l 50 0 '}, (500),function(){
+		 r[1] = paper.path('M' +(x+300)+ ' ' +(y+90)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		  r[1].animate({path : 'M' +(x+300)+ ' ' +(y+90)+ 'l 50 0 l 10 -20 l 10 30 l 10 -30 l 10 30 l 10 -20 l 50 0 l 0 260 l -300 0'}, (500),function(){
+		r[2] = paper.path('M' +(x+300)+ ' ' +(y+90)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[2].animate({path : 'M' +(x+300)+ ' ' +(y+90)+ 'l 0 80 l 30 0 l 0 -30 l 40 30 l -40 30 l 0 -30 '}, (500) ,function(){
+		r[3] = paper.path('M' +(x+370)+ ' ' +(y+170)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[3].animate({path : 'M' +(x+370)+ ' ' +(y+170)+ 'l 80 0 '}, (500) ,function(){
+		r[4] = paper.path('M' +(x+150)+ ' ' +(y+100)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[4].animate({path : 'M' +(x+150)+ ' ' +(y+100)+ 'l 0 50 '}, (500),function(){
+		r[5] = paper.path('M' +(x+140)+ ' ' +(y+150)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[5].animate({path : 'M' +(x+140)+ ' ' +(y+150)+ 'l 20 0 '}, (50),function(){
+		r[6] = paper.path('M' +(x+142)+ ' ' +(y+160)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[6].animate({path : 'M' +(x+142)+ ' ' +(y+160)+ 'l 15 0 '}, (50),function(){
+		r[6] = paper.path('M' +(x+145)+ ' ' +(y+170)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[6].animate({path : 'M' +(x+145)+ ' ' +(y+170)+ 'l 8 0 '}, (50),function(){
+	    r[7] = paper.path('M' +(x+100)+ ' ' +(y+200)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[7].animate({path : 'M' +(x+100)+ ' ' +(y+200)+ 'l 50 0 l 10 -20 l 10 30 l 10 -30 l 10 30 l 10 -20 l 130 0 '}, (500),function(){
+		r[8]= paper.circle((x+250), (y+ 190), 2).attr({'stroke':'black','stroke-width':'5','fill':'black'})
+		 r[8].animate({ 'cx': x+250, 'cy': y+ 190, }, 1, "bounce",function(){
+		 r[7] = paper.path('M' +(x+250)+ ' ' +(y+190)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[7].animate({path : 'M' +(x+250)+ ' ' +(y+190)+ 'l 0 50 '}, (10),function(){
+		 r[8] = paper.path('M' +(x+240)+ ' ' +(y+240)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[8].animate({path : 'M' +(x+240)+ ' ' +(y+240)+ 'l 20 0 '}, (10),function(){
+		 r[9] = paper.path('M' +(x+240)+ ' ' +(y+250)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[9].animate({path : 'M' +(x+240)+ ' ' +(y+250)+ 'l 20 0 '}, (10),function(){
+		 r[10] = paper.path('M' +(x+250)+ ' ' +(y+250)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[10].animate({path : 'M' +(x+250)+ ' ' +(y+250)+ 'l 0 50 '}, (10),function(){
+		 r[11] = paper.path('M' +(x+240)+ ' ' +(y+300)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[11].animate({path : 'M' +(x+240)+ ' ' +(y+300)+ 'l 20 0 '}, (10),function(){
+		 r[12] = paper.path('M' +(x+243)+ ' ' +(y+310)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[12].animate({path : 'M' +(x+243)+ ' ' +(y+310)+ 'l 15 0 '}, (10),function(){
+		r[13] = paper.path('M' +(x+245)+ ' ' +(y+320)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[13].animate({path : 'M' +(x+245)+ ' ' +(y+320)+ 'l 8 0 '}, (10),function(){
+		r[14] = paper.path('M' +(x+350)+ ' ' +(y+185)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[14].animate({path : 'M' +(x+350)+ ' ' +(y+185)+ 'l 0 50 '}, (10),function(){
+		r[15] = paper.path('M' +(x+340)+ ' ' +(y+235)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[15].animate({path : 'M' +(x+340)+ ' ' +(y+235)+ 'l 20 0 '}, (10),function(){
+	    r[16] = paper.path('M' +(x+343)+ ' ' +(y+245)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[16].animate({path : 'M' +(x+343)+ ' ' +(y+245)+ 'l 15 0 '}, (10),function(){ 
+		r[17] = paper.path('M' +(x+345)+ ' ' +(y+255)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[17].animate({path : 'M' +(x+345)+ ' ' +(y+255)+ 'l 8 0 '}, (10),function(){
+		r[18] = paper.path('M' +(x+350)+ ' ' +(y+155)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[18].animate({path : 'M' +(x+350)+ ' ' +(y+155)+ 'l  0 -30 l -5 0 l 8 -5 l 8 5 l -8 0 '}, (10),function(){
+		r[19] = paper.path('M' +(x+310)+ ' ' +(y+155)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		r[19].animate({path : 'M' +(x+310)+ ' ' +(y+155)+ 'l  10 0 '}, (10)	,function(){
+		r[20] = paper.path('M' +(x+310)+ ' ' +(y+210)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		r[20].animate({path : 'M' +(x+310)+ ' ' +(y+210)+ 'l  10 0 '}, (10),function(){
+		r[21] = paper.path('M' +(x+315)+ ' ' +(y+200)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		r[21].animate({path : 'M' +(x+315)+ ' ' +(y+200)+ 'l  0 20 '}, (10))	
+		})	
+		})
+		})	
+		})	
+		})	
+		})	
+		})
+			
+		})
+		})
+			
+		})	
+		})
+			
+		})
+		})	
+			
+		})	 
+			 
+		 })	
+		})	 
+		 })	 
+			 
+		 })	 
+			 
+			 
+		 })	 
+			 
+		 })	 
+		 })
+		 });		  
+			  
+		  }); 	  
+		  });
+}
 	function Filter(x,y){
-		var switch_button = paper.image("images/low_passckt.png", (x + 700), (y + 120 ), 200, 400);
-		paper.path('M' +(x+900)+ ' ' +(y+330)+ 'l 0 220 l -200 0').attr({'stroke':'black','stroke-width':'3'})
-		 cirFilter =  paper.circle((x+700), (y+360), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
+//		var switch_button = paper.image("images/low_passckt.png", (x + 700), (y + 120 ), 200, 400);
+		function filter(x,y){
+		r = [];
+		  r[0] = paper.path('M' +(x+150)+ ' ' +(y+100)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		  r[0].animate({path : 'M' +(x+150)+ ' ' +(y+100)+ 'l 50 0 l 10 -20 l 10 30 l 10 -30 l 10 30 l 10 -20 l 50 0 '}, (500),function(){
+		 r[1] = paper.path('M' +(x+300)+ ' ' +(y+90)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		  r[1].animate({path : 'M' +(x+300)+ ' ' +(y+90)+ 'l 50 0 l 10 -20 l 10 30 l 10 -30 l 10 30 l 10 -20 l 50 0 l 0 260 l -300 0'}, (500),function(){
+		r[2] = paper.path('M' +(x+300)+ ' ' +(y+90)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[2].animate({path : 'M' +(x+300)+ ' ' +(y+90)+ 'l 0 80 l 30 0 l 0 -30 l 40 30 l -40 30 l 0 -30 '}, (500) ,function(){
+		r[3] = paper.path('M' +(x+370)+ ' ' +(y+170)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[3].animate({path : 'M' +(x+370)+ ' ' +(y+170)+ 'l 80 0 '}, (500) ,function(){
+		r[4] = paper.path('M' +(x+150)+ ' ' +(y+100)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[4].animate({path : 'M' +(x+150)+ ' ' +(y+100)+ 'l 0 50 '}, (500),function(){
+		r[5] = paper.path('M' +(x+140)+ ' ' +(y+150)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[5].animate({path : 'M' +(x+140)+ ' ' +(y+150)+ 'l 20 0 '}, (50),function(){
+		r[6] = paper.path('M' +(x+142)+ ' ' +(y+160)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[6].animate({path : 'M' +(x+142)+ ' ' +(y+160)+ 'l 15 0 '}, (50),function(){
+		r[6] = paper.path('M' +(x+145)+ ' ' +(y+170)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		 r[6].animate({path : 'M' +(x+145)+ ' ' +(y+170)+ 'l 8 0 '}, (50),function(){
+	    r[7] = paper.path('M' +(x+100)+ ' ' +(y+200)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[7].animate({path : 'M' +(x+100)+ ' ' +(y+200)+ 'l 50 0 l 10 -20 l 10 30 l 10 -30 l 10 30 l 10 -20 l 130 0 '}, (500),function(){
+		r[8]= paper.circle((x+250), (y+ 190), 2).attr({'stroke':'black','stroke-width':'5','fill':'black'})
+		 r[8].animate({ 'cx': x+250, 'cy': y+ 190, }, 1, "bounce",function(){
+		 r[7] = paper.path('M' +(x+250)+ ' ' +(y+190)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[7].animate({path : 'M' +(x+250)+ ' ' +(y+190)+ 'l 0 50 '}, (10),function(){
+		 r[8] = paper.path('M' +(x+240)+ ' ' +(y+240)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[8].animate({path : 'M' +(x+240)+ ' ' +(y+240)+ 'l 20 0 '}, (10),function(){
+		 r[9] = paper.path('M' +(x+240)+ ' ' +(y+250)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[9].animate({path : 'M' +(x+240)+ ' ' +(y+250)+ 'l 20 0 '}, (10),function(){
+		 r[10] = paper.path('M' +(x+250)+ ' ' +(y+250)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[10].animate({path : 'M' +(x+250)+ ' ' +(y+250)+ 'l 0 50 '}, (10),function(){
+		 r[11] = paper.path('M' +(x+240)+ ' ' +(y+300)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[11].animate({path : 'M' +(x+240)+ ' ' +(y+300)+ 'l 20 0 '}, (10),function(){
+		 r[12] = paper.path('M' +(x+243)+ ' ' +(y+310)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[12].animate({path : 'M' +(x+243)+ ' ' +(y+310)+ 'l 15 0 '}, (10),function(){
+		r[13] = paper.path('M' +(x+245)+ ' ' +(y+320)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[13].animate({path : 'M' +(x+245)+ ' ' +(y+320)+ 'l 8 0 '}, (10),function(){
+		r[14] = paper.path('M' +(x+350)+ ' ' +(y+185)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[14].animate({path : 'M' +(x+350)+ ' ' +(y+185)+ 'l 0 50 '}, (10),function(){
+		r[15] = paper.path('M' +(x+340)+ ' ' +(y+235)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[15].animate({path : 'M' +(x+340)+ ' ' +(y+235)+ 'l 20 0 '}, (10),function(){
+	    r[16] = paper.path('M' +(x+343)+ ' ' +(y+245)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[16].animate({path : 'M' +(x+343)+ ' ' +(y+245)+ 'l 15 0 '}, (10),function(){ 
+		r[17] = paper.path('M' +(x+345)+ ' ' +(y+255)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[17].animate({path : 'M' +(x+345)+ ' ' +(y+255)+ 'l 8 0 '}, (10),function(){
+		r[18] = paper.path('M' +(x+350)+ ' ' +(y+155)+ 'l 0 0').attr({'stroke':'black','stroke-width':'5'})
+		r[18].animate({path : 'M' +(x+350)+ ' ' +(y+155)+ 'l  0 -30 l -5 0 l 8 -5 l 8 5 l -8 0 '}, (10),function(){
+		r[19] = paper.path('M' +(x+310)+ ' ' +(y+155)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		r[19].animate({path : 'M' +(x+310)+ ' ' +(y+155)+ 'l  10 0 '}, (10)	,function(){
+		r[20] = paper.path('M' +(x+310)+ ' ' +(y+210)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		r[20].animate({path : 'M' +(x+310)+ ' ' +(y+210)+ 'l  10 0 '}, (10),function(){
+		r[21] = paper.path('M' +(x+315)+ ' ' +(y+200)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		r[21].animate({path : 'M' +(x+315)+ ' ' +(y+200)+ 'l  0 20 '}, (10))	
+		})	
+		})
+		})	
+		})	
+		})	
+		})	
+		})
+			
+		})
+		})
+			
+		})	
+		})
+			
+		})
+		})	
+			
+		})	 
+			 
+		 })	
+		})	 
+		 })	 
+			 
+		 })	 
+			 
+			 
+		 })	 
+			 
+		 })	 
+		 })
+		 });		  
+			  
+		  }); 	  
+		  });
+		  }
+		 filter(x+450,y+200); 
+//		paper.path('M' +(x+900)+ ' ' +(y+330)+ 'l 0 220 l -200 0').attr({'stroke':'black','stroke-width':'3'})
+		 cirFilter =  paper.circle((x+540), (y+400), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 //		 
-		 cirFilter2 =  paper.circle((x+700), (y+550), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
+		 cirFilter2 =  paper.circle((x+590), (y+540), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
+		 
+		   var u2txt = paper.text(x + 450, y + 300, "Low Pass Filter ").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
+		
 	}
 	
 	function filter(x,y){
@@ -326,8 +525,8 @@ function openImg() {
 		
 		if (capChk2 == 1){
 			 f = [];
-			f[0] = paper.path('M' +(x+700)+ ' ' +(y+330)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
-		 f[0].animate({path : 'M' +(x+700)+ ' ' +(y+350)+ 'l  0 -220 l 40 0 l 0 -20'}, (500),function(){
+			f[0] = paper.path('M' +(x+540)+ ' ' +(y+395)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		 f[0].animate({path : 'M' +(x+540)+ ' ' +(y+395)+ 'l  0 -220 l 210 0 l 0 -50'}, (500),function(){
 			  cirFilter.attr({'fill':'green'});
 			  cirAmp2.attr({'fill':'green'})
 			  senChk = 2;  
@@ -343,29 +542,42 @@ function openImg() {
 	}
 	var cirMeter;
 	var filChk;
+	function meter_diag(x,y){
+	paper.rect(x , y+10, 100, 50).attr({ 'stroke-width': '5', 'fill': '#bdf582' }).toFront();
+	var u2txt = paper.text(x , y-10, "Digital Meter").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});	
+}
 	function meter(x,y){
-		var meter = paper.image("images/meterDig.png", (x + 400), (y +450 ), 120 , 140);
-		paper.path('M' +(x+500)+ ' ' +(y+550)+ 'l 100 0 ').attr({'stroke':'black','stroke-width':'3'})
-		 cirMeter =  paper.circle((x+610), (y+550), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
+		meter_diag(x+300,y+500);
+//		var meter = paper.image("images/meterDig.png", (x + 400), (y +450 ), 120 , 140);
+		paper.path('M' +(x+400)+ ' ' +(y+545)+ 'l 100 0 ').attr({'stroke':'black','stroke-width':'3'})
+		 cirMeter =  paper.circle((x+510), (y+545), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 	cirMeter.click(function(event){
 //		alert("hi");
 		if (filChk == 1){
 			 m = [];
-			m[0] = paper.path('M' +(x+620)+ ' ' +(y+550)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
-		 m[0].animate({path : 'M' +(x+620)+ ' ' +(y+550)+ 'l  70 0 '}, (500),function(){
+			m[0] = paper.path('M' +(x+510)+ ' ' +(y+545)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		 m[0].animate({path : 'M' +(x+510)+ ' ' +(y+545)+ 'l  70 0 '}, (500),function(){
 			  cirFilter2.attr({'fill':'green'});
 			  cirMeter.attr({'fill':'green'})
 			  filChk = 2; 
 			   complt(x,y); 
 		  })
-		 }		
+		 }	
+		  
 	});
 	
 	function complt(x,y){
 		alert("Connected Sucessfully");
 	}
+	
+	
 		 
 	}
+	
+	
 	 
 	 
 	 
