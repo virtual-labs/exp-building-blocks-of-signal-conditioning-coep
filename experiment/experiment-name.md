@@ -1,1 +1,1 @@
-##  Identifying building blocks of signal conditioning technique of a sensor
+## Identifying building blocks of signal conditioning technique of a sensor
