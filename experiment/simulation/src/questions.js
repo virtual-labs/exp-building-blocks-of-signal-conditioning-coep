@@ -96,8 +96,7 @@
 						dataQues.corrAns = ansCount;
 						 data.corrAns = dataQues;
 						 console.log(data);
-						alert("Test Submitted Successfully. Correct Answers Are : " + ansCount);
-						$("#testSubmit").prop('disabled',true);
+						alert("Test Submitted Successfully <br/>Correct Answers Are : " + ansCount);
 //						mimic();
 		   					
 					}
@@ -126,7 +125,13 @@
 			 $("#main-div-conf").append('<img id="openImg" src="images/sensorSym.png"  width="20%" height="30%" ">');
 			 $("#main-div-conf").append('<img id="grdImg" src="images/low_passSym.png"  width="20%" height="30%" ">');
 			 $("#main-div-conf").append('<img id="ampImg" src="images/amplickt.png"  width="20%" height="30%" ">');	 
-			 $("#main-div-conf").append('<img id="metImg" src="images/meterSym.jpeg"  width="20%" height="30%" ">');	
+			 $("#main-div-conf").append('<img id="metImg" src="images/meterSym.jpeg"  width="20%" height="30%" ">');
+			 htm = '<div class="col-sm-3">'
+			 +'</div>'
+			 +'<div class="col-sm-6">'
+			+'<br><button type="submit" id="btnAnsCheck" style="margin-top:17px;width:100%;" class=" btn btn-primary" data-toggle="modal" data-target="#mimicModel" hidden >Result</button>'
+			   +'</div>'	
+			 $("#main-div-conf").append(htm);
 			 
 		 	 $('#openImg').on('click', function() {
 			  		openImg();
