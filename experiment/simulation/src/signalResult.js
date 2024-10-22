@@ -27,7 +27,7 @@ function result(){
     }
 }		
 
-$("#btnForModal").prop("hidden",true);
+$("#procedure-btn").prop("hidden",true);
 		 console.log(data);
 //Basic knowledge	 
 if("corrAns" in data)
