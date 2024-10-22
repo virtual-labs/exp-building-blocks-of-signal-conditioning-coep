@@ -34,6 +34,7 @@
 	var capChk = 0;
 	var capChk1 = 0;
 	var capChk2 = 0;
+	var intChk = 0; 
 	var cirAmp;
 	var cirAmp2;
 	var cirFilter;
@@ -141,6 +142,11 @@ function sensor_diag(x,y){
 		'font-size': 20,
 		'font-weight': "bold"
 		});
+		
+		var point  = paper.text(x + 400, y + 60, "1").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
 	
 	}
 	function ground_diag(x,y){
@@ -175,6 +181,11 @@ function sensor_diag(x,y){
 		cirCap3 =  paper.circle((x+450), (y+100), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 		
 		var u2txt = paper.text(x + 300, y + 50, "Integrator ").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
+		
+		var point  = paper.text(x + 320, y + 60, "2").attr({
 		'font-size': 20,
 		'font-weight': "bold"
 		});
@@ -239,6 +250,16 @@ function sensor_diag(x,y){
 		'font-size': 20,
 		'font-weight': "bold"
 		});
+		
+		var point  = paper.text(x + 390, y + 80, "2").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
+		
+		var point  = paper.text(x + 750, y + 60, "3").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
 	}
 function openImg() {
 
@@ -250,6 +271,17 @@ function openImg() {
  	cirSen.click(function(event) {		
 //			alert("hi");
 			senChk = 1;
+		if (intChk == 1){
+			 s = [];
+			s[0] = paper.path('M' +(x+265)+ ' ' +(y+100)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
+		  s[0].animate({path : 'M' +(x+265)+ ' ' +(y+100)+ 'l  70 0'}, (500),function(){
+			  cirSen.attr({'fill':'green'});
+			  cirCap2.attr({'fill':'green'})
+			  senChk = 2;
+			  
+		  })
+			 
+		 }	
 	});	
 	
 	
@@ -275,6 +307,7 @@ function openImg() {
 
 	
 	cirCap2.click(function(event){
+		intChk = 1;
 		if (senChk == 1){
 			 s = [];
 			s[0] = paper.path('M' +(x+335)+ ' ' +(y+100)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
@@ -288,6 +321,8 @@ function openImg() {
 		 }
 		 	
 	});
+	
+	
 	
 	
 	
@@ -511,7 +546,17 @@ function openImg() {
 //		 
 		 cirFilter2 =  paper.circle((x+590), (y+540), 10).attr({'stroke':'black','stroke-width':'1','fill':'red'});
 		 
-		   var u2txt = paper.text(x + 450, y + 300, "Low Pass Filter ").attr({
+		   var u2txt = paper.text(x + 460, y + 330, "Low Pass Filter ").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
+		
+		var point  = paper.text(x + 520, y + 380, "4").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});
+		
+		var point  = paper.text(x + 580, y + 500, "5").attr({
 		'font-size': 20,
 		'font-weight': "bold"
 		});
@@ -526,7 +571,7 @@ function openImg() {
 		if (capChk2 == 1){
 			 f = [];
 			f[0] = paper.path('M' +(x+540)+ ' ' +(y+395)+ 'l 0 0').attr({'stroke':'black','stroke-width':'3'})
-		 f[0].animate({path : 'M' +(x+540)+ ' ' +(y+395)+ 'l  0 -220 l 210 0 l 0 -50'}, (500),function(){
+		 f[0].animate({path : 'M' +(x+540)+ ' ' +(y+395)+ 'l  0 -220 l 210 0 l 0 -60'}, (500),function(){
 			  cirFilter.attr({'fill':'green'});
 			  cirAmp2.attr({'fill':'green'})
 			  senChk = 2;  
@@ -548,6 +593,12 @@ function openImg() {
 		'font-size': 20,
 		'font-weight': "bold"
 		});	
+		
+	
+	var point1  = paper.text(x + 210, y + 10, "6").attr({
+		'font-size': 20,
+		'font-weight': "bold"
+		});			
 }
 	function meter(x,y){
 		meter_diag(x+300,y+500);
@@ -570,9 +621,16 @@ function openImg() {
 	});
 	
 	function complt(x,y){
-		alert("Connected Sucessfully");
+//		alert("Connected Sucessfully");
+		$("#btnAnsCheck").prop("hidden",false);
+		node1=  paper.text(x +300 , y + 650, 'Identification completed . Click on result button').attr({ 'font-size': 25 ,'fill':'#d42a3e'});
+					 node1.animate({x:x+300,y: 650 , 'font-size': 30}, 1000, 'bounce')
 	}
 	
+	
+	$('#btnAnsCheck').on('click', function() {
+				result();
+		});
 	
 		 
 	}
