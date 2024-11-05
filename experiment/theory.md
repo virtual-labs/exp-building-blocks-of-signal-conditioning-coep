@@ -1,6 +1,6 @@
 
 # Signal Conditioning 
-Signal conditioning refers to operations performed on signals to covernt them to a forum suitable for interfacing with other elements in the process-control loop. 
+Signal conditioning refers to operations performed on signals to covert them to a forum suitable for interfacing with other elements in the process-control loop. 
 - A sensor measures a variable by converting information about that variable into development signal of either or pneumatic nature.
 - Signal conditioning is a process of data acquisition, and an instrument called a signal conditioner is used to perform this process. This instrument converts one type of electrical or mechanical signal (input-signal) into another (output-signal).  The purpose is to amplify and convert this signal into an easy to read and compatible form for data-acquisition or machine-control. A signal conditioner helps to provide precise measurements, which are essential for accurate data acquisition and machine-control. These instruments can perform an additional number of different functions.
 
@@ -20,7 +20,7 @@ Signal conditioning refers to operations performed on signals to covernt them to
 
 ### Filtering
  
-- Another important function of a signal conditioner is filtering, and this is where the signal frequency spectrum is filtered to only include the valid data and block any noise. The filters can be made from either passive and active components or digital algorithms. A passive filter only uses capacitors, resistors, and inductors with a maximum gain of one. An active filter uses passive components in addition to active components such as operational amplifiers and transistors. State-of-the-art signal conditioners use digital filters because they are easy to adjust and no hardware is required.  A digital filter is a mathematical filter used to manipulate a signal, such as blocking or passing a particular frequency range. They use logic components such as ASICs, FPGAs or in the form of a sequential program with a signal processor.
+- Another important function of a signal conditioner is filtering and this is where the signal frequency spectrum is filtered to only include the valid data and block any noise. The filters can be made from either passive and active components or digital algorithms. A passive filter only uses capacitors, resistors, and inductors with a maximum gain of one. An active filter uses passive components in addition to active components such as operational amplifiers and transistors. State-of-the-art signal conditioners use digital filters because they are easy to adjust and no hardware is required.  A digital filter is a mathematical filter used to manipulate a signal, such as blocking or passing a particular frequency range. They use logic components such as ASICs, FPGAs or in the form of a sequential program with a signal processor.
 
 ### Evaluation and Smart-functions
  
