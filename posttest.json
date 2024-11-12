@@ -1,0 +1,68 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the phase difference between input signal and output signal when input is provided to the inverting terminal of the operational amplifier?",
+      "answers": {
+        "a": "180 degree",
+        "b": "0 degree",
+        "c": "90 degree",
+        "d": "45 degree"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the common mode rejection ratio of an operational amplifier which has common mode gain=0.5 and differential gain=1200?",
+      "answers": {
+        "a": "600",
+        "b": "1000",
+        "c": "1200",
+        "d": "2400"
+      },
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the common mode rejection ratio of an operational amplifier which has common mode gain=0.2 and differential gain=1300?",
+      "answers": {
+        "a": "6500",
+        "b": "650",
+        "c": "2400",
+        "d": "1200"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "PSRR stands for ________",
+      "answers": {
+        "a": "Power Supply Rejection Ratio ",
+        "b": "Power Supply Rejecting Ratio",
+        "c": "Power Supply Relaxation Ratio",
+        "d": "Power Supply Rejection Rate"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "Which of the integrated circuit mentioned below is the name of an operational amplifier?",
+      "answers": {
+        "a": "LM741H ",
+        "b": "BC541",
+        "c": "TIP122",
+        "d": "TIP135"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
